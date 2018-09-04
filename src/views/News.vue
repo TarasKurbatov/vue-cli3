@@ -8,9 +8,9 @@
            <h1>Новости</h1>
        	</div>
     </div>
-    <div>
-         <NewsList/>
-    </div>
+    <NewsItem :item="selectNews"/>
+    <NewsList @viewDetails="viewDetails"/>
+
     <div class="row">        
             <div class="col-12">
                 <ul class="pagination">
@@ -27,12 +27,24 @@
 </template>
 <script>
 // @ is an alias to /src
-import NewsList from '@/components/NewsList.vue'
+import NewsList from '@/components/NewsList.vue';
+import NewsItem from '@/components/NewsItem.vue'
 
 export default {
   name: 'news',
+  data: function () {
+      return {
+        selectNews:{}
+      }
+  },
   components: {
-    NewsList,
+      NewsList,
+      NewsItem,
+  },
+  methods:{
+    viewDetails(item){
+      this.selectNews = item;
+    },
   }
 }
 </script>
