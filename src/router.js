@@ -51,22 +51,27 @@ export default new Router({
     {
       path: '/contacts',
       name: 'contacts',
-      component: () => import(/* webpackChunkName: "about" */ './views/Contacts.vue')
+      component: () => import('./views/Contacts.vue')
     },
     {
         path: '/delivery',
         name: 'delivery',
-        component: () => import(/* webpackChunkName: "about" */ './views/Delivery.vue')
+        component: () => import('./views/Delivery.vue')
     },
     {
         path: '/news',
         name: 'news',
-        component: () => import(/* webpackChunkName: "about" */ './views/News.vue')
+        component: () => import('./views/News.vue')
+    },
+    {
+        path: '/news/:id',
+        name: 'newsdetail',
+        component: () => import('./views/NewsDetail.vue')
     },
     {
         path: '/cart',
         name: 'cart',
-        component: () => import(/* webpackChunkName: "about" */ './views/Cart.vue')
+        component: () => import('./views/Cart.vue')
     },
   ]
 })
